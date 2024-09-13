@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login/login.service';
 import { Router } from '@angular/router';
 import { CookiesService } from '../../services/cookies/cookies.service';
 import { EnumCookie } from '../../services/cookies/cookie.enum';
 import { Login } from '../../shared/interfaces/login';
-import { ButtonModule } from 'primeng/button';
-import { NgIf } from '@angular/common';
+import { SharedCommonModule } from '../../shared/shared-common/shared-common.module';
 
 @Component({
   selector: 'app-login',
   standalone: true,
+  providers: [
+    LoginService
+  ],
   imports: [
-    NgIf,
-    ButtonModule,
-    ReactiveFormsModule
+    SharedCommonModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
@@ -47,7 +47,10 @@ export class LoginComponent implements OnInit {
 
   public onLogin(){
     this.loading = true;
-    if (this.loginForm?.valid) {
+    this.cookiesService.set(EnumCookie.AUTHORIZATION, "contémtoken");
+    this.router.navigate(['/home']);
+    this.loading = false;
+    /* if (this.loginForm?.valid) {
       const loginData: Login = this.loginForm.value;
 
       this.loginService.login(loginData).subscribe(
@@ -62,9 +65,9 @@ export class LoginComponent implements OnInit {
             this.loading = false;
           }
         }
-      );
+      ); 
 
-    }
+    }*/
   }
 
 }

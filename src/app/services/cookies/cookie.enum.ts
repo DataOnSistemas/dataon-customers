@@ -1,4 +1,4 @@
 export enum EnumCookie {
-    AUTHORIZATION = "",
+    AUTHORIZATION = "outh",
     DOMAIN = ""
 }
