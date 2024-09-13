@@ -1,0 +1,96 @@
+.body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(179, 184, 119);
+    //background-image: url("../../../assets/imag.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .login{
+    width: 100%;
+    height: 70%;
+    padding: 5px;
+  }
+
+  .form-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .login-options{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .sign{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .login-form{
+    width: 100%;
+    height: 70%;
+    background-color: rgba($color: #ebe5e5, $alpha: 0.1);
+    padding: 5px;
+  }
+
+  .text{
+    font-size: 14px;
+  }
+
+  .welcome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  :host::ng-deep {
+    .p-inputtext{
+      background-color: rgba($color: #e9e6e6, $alpha: 0.1);
+      border: none;
+    }
+    .p-button{
+      color: white;
+    }
+  }
+
+  .text-60{
+    font-size: 60px;
+  }
+
+  .text-30{
+    font-size: 30px;
+  }
+
+  .btn-tx{
+    text-align: center;
+    width: 100%;
+  }
+
+
+  @media (max-width: 600px)
+  {
+    .form-login{
+      width: 100%;
+    }
+    .login-form{
+      width: 100%;
+    }
+    .welcome{
+      display: none;
+    }
+  }
+  input{
+    margin-bottom: 10px;
+  }

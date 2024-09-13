@@ -1,0 +1,41 @@
+<div class="body">
+    <div class="login grid">
+      <div class="welcome col-7">
+        <div>
+          <h1 class="text-60">DataOn Sistemas</h1>
+          <p class="text-30">
+            Sua plataforma de soluções personalizadas para atender integralmente as demandas da sua Hospital/Clinica veterinária e Petshops.
+          </p>
+        </div>
+      </div>
+      <div class="form-login col-5">
+        <div class="login-form grid" [formGroup]="loginForm">
+          <div class="sign">
+            <div class="dataon" ></div>
+          </div>
+          <div class="col-12">
+            <input type="email" placeholder="Email, CPF ou Celular" formControlName="email" pInputText class="w-full"/>
+            <input type="password" placeholder="Senha" formControlName="password" pInputText class="secondary w-full"/>
+            <div class="login-options">
+              <div class="text">
+                <!-- Salvar sessão -->
+              </div>
+              <div class="text">
+                <!-- Recuperar senha -->
+              </div>
+            </div>
+            <p-button (click)="onLogin()" pRipple  styleClass="p-button-rounded w-full">
+              <div *ngIf="!loading; else elseBlock" class="btn-tx">
+                Entrar
+              </div>
+              <ng-template #elseBlock>
+                <div class="btn-tx">
+                  <i class="pi pi-spin pi-spinner" style="font-size: 1.5em"></i>
+                </div>
+              </ng-template>
+            </p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
