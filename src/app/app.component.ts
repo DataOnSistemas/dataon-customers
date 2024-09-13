@@ -1,10 +1,10 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { RouterOutlet } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 import { Interceptor } from './config/interceptor/interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -16,11 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   standalone: true,
   imports: [
     RouterOutlet,
-    BrowserModule,
     HttpClientModule,
     ToastModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule
+    ReactiveFormsModule
   ],
   providers: [
     {

@@ -4,4 +4,6 @@ import { publicGuard } from './security/guards/public.guard';
 
 export const routes: Routes = [
     { path: "login", component: LoginComponent, pathMatch: "full", canActivate: [publicGuard] },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: '**', redirectTo: '/login', pathMatch: 'full' }
 ];
