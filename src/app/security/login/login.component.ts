@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login/login.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CookiesService } from '../../services/cookies/cookies.service';
 import { EnumCookie } from '../../services/cookies/cookie.enum';
 import { Login } from '../../shared/interfaces/login';

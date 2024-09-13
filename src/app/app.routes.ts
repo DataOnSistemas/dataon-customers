@@ -9,9 +9,10 @@ export const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: '**', redirectTo: '/login', pathMatch: 'full' },
     {
-        path: "home", 
-        component: HomeComponent, 
-        canActivateChild: [privateGuard],
+        path: "home",
+        pathMatch: "full",
+        component: HomeComponent,
+        canActivate: [privateGuard],
         children: []
     }
 ];

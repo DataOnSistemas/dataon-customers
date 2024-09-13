@@ -10,7 +10,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -18,7 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterOutlet,
     HttpClientModule,
     ToastModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     {
