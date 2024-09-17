@@ -1,0 +1,43 @@
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .menu-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .menu-list li.active {
+    background-color: #e0e0e0;
+    font-weight: bold;
+  }
+  
+  .menu-list .indicator {
+    width: 5px;
+    height: 100%;
+    background-color: transparent;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-list li.active .indicator {
+    background-color: #007bff;
+  }
+  
+  .menu-list i {
+    margin-right: 10px;
+    font-size: 1.2em;
+  }

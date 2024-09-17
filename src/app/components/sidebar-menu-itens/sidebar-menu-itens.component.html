@@ -1,0 +1,12 @@
+
+<ul class="menu-list">
+    <li *ngFor="let item of menuItems" 
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <span class="indicator"></span>
+        <i [ngClass]="item.iconClass"></i>
+        {{ item.description }}
+    </li>
+</ul>
+

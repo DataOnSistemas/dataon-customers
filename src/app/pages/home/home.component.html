@@ -1,23 +1,28 @@
-<div class="navheader">
-    <div (click)="onOpenModal()">
-        <h2><span class="logo">Data</span><span class="logo2" >On</span></h2>
-    </div>
-    <div class="buttons grid">
-        <!-- <p-avatar icon="pi pi-user" styleClass="mr-2" size="large" [style]="{'background-color':'#2196F3', 'color': '#ffffff'}" shape="circle"></p-avatar> -->
-        <div></div>
-    </div>
+<div class="header">
+  <div (click)="onOpenModal()">
+      <h2><span class="logo">Data</span><span class="logo2" >On - Clientes</span></h2>
   </div>
-  <p-sidebar [showCloseIcon]="false" [(visible)]="sidebarVisible">
-    <ng-template pTemplate="header">
-      Ola
-    </ng-template>
-    <ng-template pTemplate="footer">
-        <ul>
-          <li>
-            <a  class="p-ripple"></a>
-          </li>
-        </ul>
-    </ng-template>
-  </p-sidebar>
+  <div class="buttons grid">
+      <div></div>
+  </div>
+</div>
+<div class="body">
+  <router-outlet></router-outlet>
+</div>
+<p-sidebar [showCloseIcon]="false" [(visible)]="sidebarVisible">
+  <ng-template pTemplate="header">
+    Ola
+  </ng-template>
+  <ng-template pTemplate="body">
+    <app-sidebar-menu-itens [menuItems]="items"></app-sidebar-menu-itens>
+  </ng-template>
+  <ng-template pTemplate="footer">
+      <ul>
+        <li>
+          <a  class="p-ripple"></a>
+        </li>
+      </ul>
+  </ng-template>
+</p-sidebar>
   
   

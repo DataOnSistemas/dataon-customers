@@ -40,25 +40,21 @@ export class LoginComponent implements OnInit {
 
   private createForm() {
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
+      email: new FormControl('', [Validators.required]),
       password: new FormControl('', Validators.required)
     });
   }
 
   public onLogin(){
     this.loading = true;
-    this.cookiesService.set(EnumCookie.AUTHORIZATION, "contémtoken");
-    this.router.navigate(['/home']);
-    this.loading = false;
-    /* if (this.loginForm?.valid) {
+    if (this.loginForm?.valid) {
       const loginData: Login = this.loginForm.value;
 
       this.loginService.login(loginData).subscribe(
         {
           next: (response) => {
-            this.cookiesService.set(EnumCookie.AUTHORIZATION, response.accessToken)
-            this.loginService.setDomain(loginData);
-            this.router.navigate(['home'])
+            this.cookiesService.set(EnumCookie.AUTHORIZATION, response.info.AccessToken)
+            this.router.navigate(['/home'])
             this.loading = false;
           },
           error: (err) => {
@@ -67,7 +63,7 @@ export class LoginComponent implements OnInit {
         }
       ); 
 
-    }*/
+    }
   }
 
 }

@@ -1,34 +1,29 @@
-.suite-home{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 100%;
+  padding: 10px;
+}
+.body {
+  height: calc(100% - 60px);
+}
+
+.buttons {
+  margin-right: 16px;
+}
+
+.logo{
+color: #FF9E1B;
+}
+.logo2{
+color: #0082BA;
+}
+
+:host::ng-deep {
+  .p-sidebar-content{
+    padding: 0px;
   }
-  .apps{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .navheader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 7%;
-    width: 100%;
-    position: absolute;
-    //box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-    //background-color: var(--surface-a);
-    padding: 10px;
-  }
-  .buttons {
-    margin-right: 16px;
-  }
-  
-  .logo{
-  color: #FF9E1B;
-  }
-  .logo2{
-  color: #0082BA;
-  }
-  
+}
   

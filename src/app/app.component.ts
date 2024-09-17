@@ -7,6 +7,7 @@ import { ToastModule } from 'primeng/toast';
 
 import { Interceptor } from './config/interceptor/interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from './config/http/http.module';
 
 
 
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ToastModule,
     ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     {
