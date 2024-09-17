@@ -4,6 +4,7 @@ import { SharedCommonModule } from '../../shared/shared-common/shared-common.mod
 import { TreeModule } from 'primeng/tree';
 import { SidebarMenuItensComponent } from '../../components/sidebar-menu-itens/sidebar-menu-itens.component';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -20,16 +21,27 @@ export class HomeComponent implements OnInit {
 
   public sidebarVisible: boolean = false;
 
+  public selectdEmployee: any;
+
+  public employees: any = [
+    { name: 'New York', code: 'NY' },
+  ]
+
   items: any[] = [
     {
       route: "dashboard",
-      iconClass: 'pi pi-chart-bar',
+      iconClass: 'do do-home',
       description: 'Inicio'
     },
     {
       route: "my-pets",
       iconClass: 'do do-pet',
       description: 'Meus pets'
+    },
+    {
+      route: "profile",
+      iconClass: 'do do-person',
+      description: 'Meu cadastro'
     },
   ];
 

@@ -14,6 +14,11 @@
     Ola
   </ng-template>
   <ng-template pTemplate="body">
+    <div class="formgrid grid">
+      <div class="field col-12 md:col-6">
+        <p-dropdown class="w-full" [options]="employees"  [(ngModel)]="selectdEmployee" optionLabel="name" placeholder="Selecione a empresa" />
+      </div>
+    </div>
     <app-sidebar-menu-itens [menuItems]="items"></app-sidebar-menu-itens>
   </ng-template>
   <ng-template pTemplate="footer">
