@@ -14,10 +14,11 @@ export const routes: Routes = [
         component: HomeComponent,
         canActivateChild: [privateGuard],
         children: [
-            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+            
             { path: 'dashboard', component: DashboardComponent },
             { path: 'my-pets', component: MyPetsComponent },
             { path: 'profile', component: ProfileComponent },
+            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
         ]
     },
     { path: '', redirectTo: '/login', pathMatch: 'full' },
