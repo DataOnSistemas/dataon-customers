@@ -9,9 +9,12 @@
 <div class="body">
   <router-outlet></router-outlet>
 </div>
+<div class="footer">
+  
+</div>
 <p-sidebar [showCloseIcon]="false" [(visible)]="sidebarVisible">
   <ng-template pTemplate="header">
-    Ola
+    Ola {{ loginData.Nome }}
   </ng-template>
   <ng-template pTemplate="body">
     <div class="formgrid grid">

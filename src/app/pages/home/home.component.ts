@@ -25,13 +25,20 @@ export class HomeComponent implements OnInit {
 
   public selectdEmployee: any;
 
-  public employees: any = []
+  public employees: any = [];
+
+  public loginData: any = {};
 
   items: any[] = [
     {
       route: "dashboard",
       iconClass: 'do do-home',
       description: 'Inicio'
+    },
+    {
+      route: "timeline",
+      iconClass: 'do do-timeline',
+      description: 'TimeLIne'
     },
     {
       route: "my-pets",
@@ -54,6 +61,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.employees = JSON.parse(this.cookieService.get(EnumCookie.COMPANIES));
     this.selectdEmployee = this.employees[0];
+    this.loginData = JSON.parse(this.cookieService.get(EnumCookie.ALL_DATA));
   }
 
   onOpenModal(): void {

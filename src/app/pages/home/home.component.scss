@@ -21,6 +21,14 @@ color: #FF9E1B;
 color: #0082BA;
 }
 
+.footer{
+  position: fixed;
+  height: 60px;
+  bottom: 0px;
+  width: 100%;
+  background-color: #FF9E1B;
+}
+
 :host::ng-deep {
   .p-sidebar-content{
     padding: 0px;
@@ -30,4 +38,5 @@ color: #0082BA;
     width: 100%;
 }
 }
+
   
