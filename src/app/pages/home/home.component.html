@@ -9,8 +9,21 @@
 <div class="body">
   <router-outlet></router-outlet>
 </div>
-<div class="footer">
-  
+<div *ngIf="this.isMobile" class="footer">
+  <div class="formgrid grid">
+    <div (click)="onRoute('dashboard')" pRipple class="field col-3 md:col-3 btn-footer">
+      <i class="do do-home" ></i>
+    </div>
+    <div (click)="onRoute('timeline')" class="field col-3 md:col-3 btn-footer">
+      <i class="do do-timeline" ></i>
+    </div>
+    <div (click)="onRoute('my-pets')" class="field col-3 md:col-3 btn-footer">
+      <i class="do do-pet" ></i>
+    </div>
+    <div (click)="onRoute('profile')" class="field col-3 md:col-3 btn-footer">
+      <i class="do do-person" ></i>
+    </div>
+  </div>
 </div>
 <p-sidebar [showCloseIcon]="false" [(visible)]="sidebarVisible">
   <ng-template pTemplate="header">

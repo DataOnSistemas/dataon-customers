@@ -5,6 +5,7 @@ import { TreeModule } from 'primeng/tree';
 import { SidebarMenuItensComponent } from '../../components/sidebar-menu-itens/sidebar-menu-itens.component';
 import { CookiesService } from '../../services/cookies/cookies.service';
 import { EnumCookie } from '../../services/cookies/cookie.enum';
+import { Breakpoints, BreakpointObserver as BObserver, BreakpointObserver } from '@angular/cdk/layout';
 
 
 @Component({
@@ -20,6 +21,8 @@ import { EnumCookie } from '../../services/cookies/cookie.enum';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+
+  isMobile: boolean = false;
 
   public sidebarVisible: boolean = false;
 
@@ -55,10 +58,14 @@ export class HomeComponent implements OnInit {
   
   constructor(
     private readonly router: Router,
-    private readonly cookieService: CookiesService
+    private readonly cookieService: CookiesService,
+    private breakpointObserver: BreakpointObserver
   ){}
 
   ngOnInit(): void {
+    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(r => {
+      this.isMobile = r.matches;
+    });
     this.employees = JSON.parse(this.cookieService.get(EnumCookie.COMPANIES));
     this.selectdEmployee = this.employees[0];
     this.loginData = JSON.parse(this.cookieService.get(EnumCookie.ALL_DATA));
