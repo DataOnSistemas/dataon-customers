@@ -1,3 +1,6 @@
+.home{
+  height: 100vh;
+}
 .header {
   display: flex;
   align-items: center;
@@ -11,7 +14,9 @@ box-shadow: -3px 1px 11px -3px rgba(148,140,148,1);
 }
 .body {
   height: calc(100% - 60px);
+  max-height: calc(100% - 60px);
   padding: 10px;
+  margin-bottom: 60px;
 }
 
 .buttons {
@@ -30,9 +35,10 @@ color: #010a0e;
   height: 60px;
   bottom: 0px;
   width: 100%;
+  background-color: white;
   -webkit-box-shadow: 0px -2px 11px -4px rgba(148,140,148,1);
--moz-box-shadow: 0px -2px 11px -4px rgba(148,140,148,1);
-box-shadow: 0px -2px 11px -4px rgba(148,140,148,1);
+  -moz-box-shadow: 0px -2px 11px -4px rgba(148,140,148,1);
+  box-shadow: 0px -2px 11px -4px rgba(148,140,148,1);
 }
 
 .btn-footer{

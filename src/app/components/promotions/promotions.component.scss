@@ -1,0 +1,25 @@
+.div-promotions{
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+}
+.card-promotion{
+    background: #1D976C;
+    background: -webkit-linear-gradient(to top, #93F9B9, #1D976C);
+    background: linear-gradient(to top, #93F9B9, #1D976C);
+    height: 80px;
+    width: 150px;
+    min-width: 150px;
+    margin: 10px 5px 5px 0px;
+    border-radius: 10px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+.card-promotion-text{
+    font-size: 12px;
+    color: white;
+}

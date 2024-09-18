@@ -1,14 +1,14 @@
 .dash-pet{
     display: flex;
     max-width: 100%;
-    overflow-x: auto;
+    overflow-y: scroll;
 }
 .pet{
     height: 100px;
     width: 100px;
+    min-width: 100px;
     margin: 10px;
     border-radius: 10px;
-    
     font-size: 13px;
     display: flex;
     align-items: center;

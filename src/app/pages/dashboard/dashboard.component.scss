@@ -1,3 +1,8 @@
+.dashboard{
+    overflow: auto;
+    height: 100vh;
+}
+
 .dicas{
     height: 150px;
     background: #FF8008;
@@ -25,16 +30,21 @@
     margin-top: 30px;
     border-radius: 15px;
     padding: 10px;
-    .pets-title{
-
-    }
 }
 .promotions{
-    margin-top: 30px; 
+    border-radius: 15px;
+    padding: 10px;
+    .prromotions-title{
+        margin-bottom: 10px;
+    }
 }
-.schedulers {
-    margin-top: 30px;
+.appointments {
+    padding: 10px;
+    .appointments-title{
+        margin-bottom: 10px;
+    }
 }
 .companies{
     margin-top: 30px;
+
 }
