@@ -2,21 +2,26 @@
   height: 100vh;
 }
 .header {
+  position: fixed;
   display: flex;
+  top: 0px;
+  background-color: white;
   align-items: center;
   justify-content: space-between;
   height: 60px;
   width: 100%;
   padding: 10px;
   -webkit-box-shadow: -3px 1px 11px -3px rgba(148,140,148,1);
--moz-box-shadow: -3px 1px 11px -3px rgba(148,140,148,1);
-box-shadow: -3px 1px 11px -3px rgba(148,140,148,1);
+  -moz-box-shadow: -3px 1px 11px -3px rgba(148,140,148,1);
+  box-shadow: -3px 1px 11px -3px rgba(148,140,148,1);
 }
 .body {
-  height: calc(100% - 60px);
-  max-height: calc(100% - 60px);
+  position: fixed;
+  top: 60px;
+  bottom: 70px;
+  height: calc(100% - 30px);
+  width: 100%;
   padding: 10px;
-  margin-bottom: 60px;
 }
 
 .buttons {

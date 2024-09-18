@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DashPetsComponent } from "../../components/dash-pets/dash-pets.component";
 import { SummaryAppointmentsComponent } from "../../components/summary-appointments/summary-appointments.component";
 import { PromotionsComponent } from "../../components/promotions/promotions.component";
+import { CardsCompaniesComponent } from "../../components/cards-companies/cards-companies.component";
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +10,8 @@ import { PromotionsComponent } from "../../components/promotions/promotions.comp
   imports: [
     DashPetsComponent,
     SummaryAppointmentsComponent,
-    PromotionsComponent
+    PromotionsComponent,
+    CardsCompaniesComponent
 ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
