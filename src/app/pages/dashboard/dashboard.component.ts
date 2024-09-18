@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { DashPetsComponent } from "../../components/dash-pets/dash-pets.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
+  imports: [
+    DashPetsComponent
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })

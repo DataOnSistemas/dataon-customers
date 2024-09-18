@@ -5,7 +5,6 @@ import { Router } from "@angular/router";
 import { inject } from "@angular/core";
 import { EnumCookie } from "../../services/cookies/cookie.enum";
 import { environment } from "../../../envoronments/environment.development";
-import { ToastService } from "../../services/toast/toast.service";
 
 export function authInterceptor(originalRequest: HttpRequest<unknown>, next: HttpHandlerFn): Observable<HttpEvent<unknown>> {
     const cookiesService = inject(CookiesService);
@@ -15,8 +14,11 @@ export function authInterceptor(originalRequest: HttpRequest<unknown>, next: Htt
     let request: HttpRequest<unknown>;
 
     let headers = new HttpHeaders();
-        headers = headers.set('Authorization',"Bearer " + cookiesService.get(EnumCookie.AUTHORIZATION));
-
+    if(cookiesService.get(EnumCookie.AUTHORIZATION) !== null){
+        headers = headers.set('DOtoken', cookiesService.get(EnumCookie.AUTHORIZATION));
+        headers = headers.set('Authorization', environment.basicAuth);
+    }
+    
 
     request = originalRequest.clone({
         headers: headers,
