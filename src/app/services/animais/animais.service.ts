@@ -11,7 +11,7 @@ export class AnimaisService {
 
 
   public onLoadAnimais(doID: number, pIDPessoa: number) : Observable<any> {
-    return this.http.get<String>(`vet/VetAnimais/WebInvoke_loadByIDPessoa?doID=${doID}&pIDPessoa=${pIDPessoa}`);
+    return this.http.get(`vet/VetAnimais/WebInvoke_loadByIDPessoa?doID=${doID}&pIDPessoa=${pIDPessoa}`);
   }
 
 }

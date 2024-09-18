@@ -1,9 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
-import { CookiesService } from '../cookies/cookies.service';
-import { EnumCookie } from '../cookies/cookie.enum';
 import { Login } from '../../shared/interfaces/login';
 
 

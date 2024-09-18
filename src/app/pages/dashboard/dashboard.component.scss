@@ -23,7 +23,14 @@
 }
 .pets{
     margin-top: 30px;
-    background-color: #FFC837;
+    border-radius: 15px;
+    padding: 10px;
+    .pets-title{
+
+    }
+}
+.promotions{
+    margin-top: 30px; 
 }
 .schedulers {
     margin-top: 30px;

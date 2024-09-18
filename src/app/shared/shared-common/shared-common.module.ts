@@ -6,6 +6,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { SidebarModule } from 'primeng/sidebar';
 import { DropdownModule } from 'primeng/dropdown';
+import { HttpModule } from '../../config/http/http.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DropdownModule } from 'primeng/dropdown';
     PasswordModule,
     SidebarModule,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ]
 })
 export class SharedCommonModule { }

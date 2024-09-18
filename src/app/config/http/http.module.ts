@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient, provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from '../interceptor/auth-interceptor';
+import { Interceptor } from '../interceptor/interceptor';
 
 
 
@@ -17,6 +18,7 @@ import { authInterceptor } from '../interceptor/auth-interceptor';
           authInterceptor
         ])
     ),
+    { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
     {
         provide: HttpClient
     },
