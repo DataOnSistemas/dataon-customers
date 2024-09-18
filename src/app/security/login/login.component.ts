@@ -53,7 +53,9 @@ export class LoginComponent implements OnInit {
       this.loginService.login(loginData).subscribe(
         {
           next: (response) => {
-            this.cookiesService.set(EnumCookie.AUTHORIZATION, response.info.AccessToken)
+            this.cookiesService.set(EnumCookie.AUTHORIZATION, response.info.AccessToken);
+            this.cookiesService.set(EnumCookie.COMPANIES, JSON.stringify(response.info.MultiEmpresa));
+            this.cookiesService.set(EnumCookie.ALL_DATA, JSON.stringify(response.info));
             this.router.navigate(['/home'])
             this.loading = false;
           },

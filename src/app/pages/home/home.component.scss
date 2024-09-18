@@ -24,6 +24,7 @@ color: #0082BA;
 :host::ng-deep {
   .p-sidebar-content{
     padding: 0px;
+    overflow-x: hidden;
   }
   .p-dropdown{
     width: 100%;

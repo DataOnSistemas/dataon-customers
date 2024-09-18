@@ -18,9 +18,4 @@ export class LoginService {
   public login(params: Login) : Observable<any> {
     return this.http.post<String>(`dataOn/doClientPanel/login?login=${params.email}&pass=${params.password}`, null);
   }
-
-  public setDomain(params: Login): void{
-    var domain = params.email.split("@")[1];
-    this.cookiesService.set(EnumCookie.DOMAIN, domain);
-  }
 }

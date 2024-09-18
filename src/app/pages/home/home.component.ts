@@ -3,6 +3,8 @@ import { Router, RouterOutlet } from '@angular/router';
 import { SharedCommonModule } from '../../shared/shared-common/shared-common.module';
 import { TreeModule } from 'primeng/tree';
 import { SidebarMenuItensComponent } from '../../components/sidebar-menu-itens/sidebar-menu-itens.component';
+import { CookiesService } from '../../services/cookies/cookies.service';
+import { EnumCookie } from '../../services/cookies/cookie.enum';
 
 
 @Component({
@@ -23,9 +25,7 @@ export class HomeComponent implements OnInit {
 
   public selectdEmployee: any;
 
-  public employees: any = [
-    { name: 'New York', code: 'NY' },
-  ]
+  public employees: any = []
 
   items: any[] = [
     {
@@ -46,12 +46,14 @@ export class HomeComponent implements OnInit {
   ];
 
   
-  constructor(private readonly router: Router){
-    
-  }
+  constructor(
+    private readonly router: Router,
+    private readonly cookieService: CookiesService
+  ){}
 
   ngOnInit(): void {
-    
+    this.employees = JSON.parse(this.cookieService.get(EnumCookie.COMPANIES));
+    this.selectdEmployee = this.employees[0];
   }
 
   onOpenModal(): void {

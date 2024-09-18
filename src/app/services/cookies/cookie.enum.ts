@@ -1,4 +1,5 @@
 export enum EnumCookie {
     AUTHORIZATION = "outh",
-    DOMAIN = ""
+    COMPANIES = "companies",
+    ALL_DATA = "all_data"
 }
