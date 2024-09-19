@@ -28,9 +28,13 @@ export function authInterceptor(originalRequest: HttpRequest<unknown>, next: Htt
     return next(request).pipe(
         catchError((error: HttpErrorResponse) => {
 
-            if(error.error.status === 401){
+            if(error.status === 401){
               cookiesService.delete(EnumCookie.AUTHORIZATION);
               router.navigate(['login']);
+            }
+            if(!error.ok){
+                cookiesService.delete(EnumCookie.AUTHORIZATION);
+                router.navigate(['login']);
             }
             return throwError(() => error.error);
           })
