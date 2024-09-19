@@ -14,4 +14,8 @@ export class AnimaisService {
     return this.http.get(`vet/VetAnimais/WebInvoke_loadByIDPessoa?doID=${doID}&pIDPessoa=${pIDPessoa}`);
   }
 
+  public onLoadSummaryAppointments(doID: number, pIDPessoa: number) : Observable<any> {
+    return this.http.get(`doConsumer/vetAnimais/SummaryAppointments?doID=${doID}&pIDPessoa=${pIDPessoa}`);
+  }
+
 }

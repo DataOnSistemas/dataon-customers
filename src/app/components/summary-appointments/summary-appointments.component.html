@@ -1,12 +1,14 @@
 <div>
     <p-accordion>
-        <p-accordionTab header="Black">
-            dsd
-        </p-accordionTab>
-    </p-accordion>
-    <p-accordion>
-        <p-accordionTab header="Pretinha">
-            dsd
+        <p-accordionTab [header]="appointment.Nome" *ngFor="let appointment of appointments">
+            <div class="appointment-list" *ngFor="let proc of appointment.procedimentos">
+                <div>
+                    {{ proc.Titulo }}
+                </div>
+                <div>
+                    {{ proc.Quantidade }}
+                </div>
+            </div>
         </p-accordionTab>
     </p-accordion>
 </div>
