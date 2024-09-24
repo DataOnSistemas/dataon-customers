@@ -4,6 +4,7 @@ import { AnimaisService } from '../../services/animais/animais.service';
 import { AccordionModule } from 'primeng/accordion';
 import { CookieService } from 'ngx-cookie-service';
 import { EnumCookie } from '../../services/cookies/cookie.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-summary-appointments',
@@ -20,12 +21,14 @@ import { EnumCookie } from '../../services/cookies/cookie.enum';
 })
 export class SummaryAppointmentsComponent implements OnInit {
 
+
   public appointments: any[] = [];
   private userData: any;
 
   constructor(
     private readonly animaisService: AnimaisService,
-    private readonly coockieService: CookieService
+    private readonly coockieService: CookieService,
+    private readonly router: Router
   ){}
   ngOnInit(): void {
     this.userData = JSON.parse(this.coockieService.get(EnumCookie.ALL_DATA));
@@ -44,6 +47,10 @@ export class SummaryAppointmentsComponent implements OnInit {
         console.log(error);
       }
     })
+  }
+
+  onLoadTimeLine(id: any) {
+    this.router.navigate(['home','timeline']);
   }
 
   

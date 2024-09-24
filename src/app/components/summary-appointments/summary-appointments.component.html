@@ -1,6 +1,16 @@
 <div>
     <p-accordion>
-        <p-accordionTab [header]="appointment.Nome" *ngFor="let appointment of appointments">
+        <p-accordionTab  *ngFor="let appointment of appointments">
+            <ng-template pTemplate="header" >
+                <div class="head">
+                    <div>
+                        {{appointment.Nome}}
+                    </div>
+                    <div (click)="onLoadTimeLine(appointment.ID)">
+                        <i class="do do-timeline"></i>
+                    </div>
+                </div>
+            </ng-template>
             <div class="appointment-list" *ngFor="let proc of appointment.procedimentos">
                 <div>
                     {{ proc.Titulo }}
