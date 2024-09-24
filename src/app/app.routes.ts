@@ -19,7 +19,7 @@ export const routes: Routes = [
             { path: 'dashboard', component: DashboardComponent },
             { path: 'my-pets', component: MyPetsComponent },
             { path: 'profile', component: ProfileComponent },
-            { path: 'timeline', component: TimelineComponent },
+            { path: 'timeline/:id', component: TimelineComponent },
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
         ]
     },

@@ -1,0 +1,77 @@
+.timeline{
+    height: 80px;
+    display: flex;
+    margin-bottom: 10px;
+}
+.timeline-logo{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon{
+        width: 50px;
+        height: 50px;
+        background-color: antiquewhite;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.timeline-content{
+    width: 85%;
+    font-size: 12px;
+    .head{
+        height: 70%;
+        padding: 5px;
+    }
+    .footer{
+        height: 30%;
+        padding: 5px;
+        background-color: antiquewhite;
+        .icons{
+            width: 15px;
+            height: 15px;
+        }
+    }
+}
+
+.consulta{
+    background-color: #FDC19A;
+}
+.cirurgia{
+    background-color: #AAB9F7;
+}
+.exame{
+    background-color: #FAC3D5;
+}
+.vacina{
+    background-color: #C3E4A0;
+}
+.procedimento{
+    background-color: #d14586;
+}
+.creche{
+    background-color: #248AE6;
+}
+.pacote{
+    background-color: #DEAAEA;
+}
+.hospedagem{
+    background-color: #80DAFD;
+}
+.internamento{
+    background-color: #40CACA;
+}
+.documento{
+    background-color: #95D5DE;
+}
+.checklist{
+    background-color: #cca6dd;
+}
+.orcamento{
+    background-color: #d47b1c;
+}
+.vermifugo{
+    background-color: #9C9784;
+}

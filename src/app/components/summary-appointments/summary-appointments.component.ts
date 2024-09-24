@@ -50,7 +50,7 @@ export class SummaryAppointmentsComponent implements OnInit {
   }
 
   onLoadTimeLine(id: any) {
-    this.router.navigate(['home','timeline']);
+    this.router.navigate(['home','timeline',id]);
   }
 
   

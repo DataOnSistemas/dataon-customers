@@ -1,1 +1,17 @@
-
+<div [ngClass]="onGetColorComponent(item['TID'])" *ngFor="let item of timelineItems">
+    <div class="timeline-logo">
+        <div class="icon">
+            <i class="do do-timeline" ></i>
+        </div>
+    </div>
+    <div class="timeline-content">
+        <div class="head">
+           {{ item["DESCRIÇÃO"] }}
+        </div>
+        <div class="footer">
+            <div>
+                <i class="icons do do-timeline"></i>
+            </div>
+        </div>
+    </div>
+</div>
