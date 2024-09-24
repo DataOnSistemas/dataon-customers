@@ -1,17 +1,27 @@
-<div [ngClass]="onGetColorComponent(item['TID'])" *ngFor="let item of timelineItems">
-    <div class="timeline-logo">
-        <div class="icon">
-            <i class="do do-timeline" ></i>
+<div class="timeline-container">
+    <div [ngClass]="onGetColorComponent(item['TID'], 1)" *ngFor="let item of timelineItems">
+        <div class="timeline-data">
+            {{ onConvertDate(item['DATA']) }}
         </div>
-    </div>
-    <div class="timeline-content">
-        <div class="head">
-           {{ item["DESCRIÇÃO"] }}
+        <div class="timeline-logo">
+            <div class="icon">
+                <i [ngClass]="onGetColorComponent(item['TID'], 2)" ></i>
+            </div>
         </div>
-        <div class="footer">
-            <div>
-                <i class="icons do do-timeline"></i>
+        <div class="timeline-content">
+            <div class="head">
+               {{ item["DESCRIÇÃO"] }}
+            </div>
+            <div class="footer">
+                <div>
+                    <i class="icons do do-timeline"></i>
+                    <i class="icons do do-timeline"></i>
+                </div>
+                <div>
+                    {{ item['FATURADO'] }}
+                </div>
             </div>
         </div>
     </div>
 </div>
+

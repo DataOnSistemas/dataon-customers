@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { DynamicQueryService } from '../../services/dynamic-query/dynamic-query.service';
 import { EnumCookie } from '../../services/cookies/cookie.enum';
 import { DynamicQuery } from '../../services/dynamic-query/dynamic-query';
+import { onConvertDate } from '../../shared/util/util'
+
+
 
 @Component({
   selector: 'app-vet-timeline',
@@ -19,6 +22,7 @@ import { DynamicQuery } from '../../services/dynamic-query/dynamic-query';
   styleUrl: './vet-timeline.component.scss'
 })
 export class VetTimelineComponent implements OnInit {
+
 
   public timelineItems: any[] = [];
   private userData: any;
@@ -58,37 +62,42 @@ export class VetTimelineComponent implements OnInit {
     this.dynamicParams.criterion = `${this.idAnimal}, -1000, ${this.userData.IDPessoa}|-1|0|-1`;
   }
 
-  onGetColorComponent(tid: any){
+  onGetColorComponent(tid: any, route: number){
+    let defaultClass = "timeline-item";
     switch(tid){
       case -70:
-        return "timeline consulta";
+        return route === 1 ? `${defaultClass} consulta` : "do do-consulta";
       case -80:
-          return "timeline cirurgia";
+        return route === 1 ? `${defaultClass} cirurgia` : "do do-cirurgia";
       case -90:
-        return "timeline exame";
+        return route === 1 ? `${defaultClass} exame` : "do do-exame";
       case -2:
-        return "timeline vacina"; 
+        return route === 1 ? `${defaultClass} vacina` : "do do-vacina";
       case -3://vermifugo
         return "timeline vermifugo";
       case -100:
-        return "timeline pacote";
+        return route === 1 ? `${defaultClass} pacote` : "do do-estetica";
       case -130:
-        return "timeline creche";
+        return route === 1 ? `${defaultClass} creche` : "do do-creche";
       case -4:
         return "timeline documento";
       case -9:
         return "timeline procedimento";
       case -110:
-        return "timeline hospedagem";
+        return route === 1 ? `${defaultClass} hospedagem` : "do do-hospedagem";
       case -120:
-        return "timeline internamento";
+        return route === 1 ? `${defaultClass} internamento` : "do do-internamento";
       case -11:
         return "timeline checklist";
       case -7:
         return "timeline orcamento";
       default:
         return "timeline"
-    }
+    } 
+  }
+
+  onConvertDate(date: any) {
+    return onConvertDate(date);
   }
   
 }

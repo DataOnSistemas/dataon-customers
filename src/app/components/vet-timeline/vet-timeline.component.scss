@@ -1,8 +1,32 @@
-.timeline{
-    height: 80px;
+.timeline-container{
+    position: relative;
+    margin: 20px 0;
+    padding-left: 50px;
+}
+
+.timeline-item{
+    height: 90px;
     display: flex;
     margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
 }
+
+.timeline-data{
+    position: absolute;
+    left: -7px;
+    background-color: white;
+    margin-top: 13px;
+    font-size: 8px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 60px;
+    border-radius: 10px;
+}
+
+
+
 .timeline-logo{
     width: 15%;
     display: flex;
@@ -11,7 +35,6 @@
     .icon{
         width: 50px;
         height: 50px;
-        background-color: antiquewhite;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -28,13 +51,38 @@
     .footer{
         height: 30%;
         padding: 5px;
-        background-color: antiquewhite;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         .icons{
+            margin-right: 10px;
             width: 15px;
             height: 15px;
         }
     }
 }
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ccc;
+  }
+.timeline-item::before {
+    content: '';
+    margin-bottom: 15px;
+    position: absolute;
+    left: 17px;
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px white;
+}
+
 
 .consulta{
     background-color: #FDC19A;

@@ -7,6 +7,7 @@ import { PasswordModule } from 'primeng/password';
 import { SidebarModule } from 'primeng/sidebar';
 import { DropdownModule } from 'primeng/dropdown';
 import { HttpModule } from '../../config/http/http.module';
+import { TimelineModule } from 'primeng/timeline';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HttpModule } from '../../config/http/http.module';
     SidebarModule,
     DropdownModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    TimelineModule
   ]
 })
 export class SharedCommonModule { }

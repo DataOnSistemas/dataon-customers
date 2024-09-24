@@ -1,10 +1,33 @@
-FROM node:lts-alpine
-ENV NODE_ENV=production
-WORKDIR /usr/src/app
-COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN npm install --production --silent && mv node_modules ../
-COPY . .
-EXPOSE 3000
-RUN chown -R node /usr/src/app
-USER node
-CMD ["npm", "start"]
+
+FROM node:latest as build
+
+
+ARG REPO_URL=https://github.com/DataOnSistemas/dataon-customers.git
+ARG ACCESS_TOKEN
+
+
+WORKDIR /app
+
+
+RUN apt-get update && apt-get install -y git
+
+
+RUN git clone https://${ACCESS_TOKEN}:x-oauth-basic@github.com/DataOnSistemas/dataon-customers.git .
+
+
+RUN npm install
+
+
+RUN npm run build --prod
+
+
+FROM nginx:alpine
+
+
+COPY --from=build /app/dist /usr/share/nginx/html
+
+
+EXPOSE 80
+
+
+CMD ["nginx", "-g", "daemon off;"]

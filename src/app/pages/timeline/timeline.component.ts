@@ -17,7 +17,6 @@ export class TimelineComponent implements OnInit {
 
   ngOnInit(): void {
     this.animalId = this.route.snapshot.paramMap.get("id")!;
-    console.log(this.animalId);
   }
 
 }
