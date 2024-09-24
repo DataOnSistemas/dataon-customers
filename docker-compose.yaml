@@ -1,6 +1,7 @@
 services:
   dataoncustomers:
     image: dataoncustomers
+    container_name: dataon-customers
     build:
       context: .
       dockerfile: Dockerfile

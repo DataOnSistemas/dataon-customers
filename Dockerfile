@@ -1,5 +1,5 @@
 
-FROM node:latest as build
+FROM node:20 as build
 
 
 ARG REPO_URL=https://github.com/DataOnSistemas/dataon-customers.git
@@ -24,7 +24,7 @@ RUN npm run build
 FROM nginx:alpine
 
 
-COPY --from=build /app/browsers /usr/share/nginx/html
+COPY --from=build /app/dist/dataon-customers/browser /usr/share/nginx/html
 
 
 EXPOSE 80
