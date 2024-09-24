@@ -22,6 +22,7 @@ import { Breakpoints, BreakpointObserver as BObserver, BreakpointObserver } from
 })
 export class HomeComponent implements OnInit {
 
+
   isMobile: boolean = false;
 
   public sidebarVisible: boolean = false;
@@ -77,6 +78,13 @@ export class HomeComponent implements OnInit {
 
   onRoute(route: String): void{
     this.router.navigate(['home',route]);
+  }
+
+  onLogout() {
+    this.cookieService.delete(EnumCookie.ALL_DATA);
+    this.cookieService.delete(EnumCookie.AUTHORIZATION);
+    this.cookieService.delete(EnumCookie.COMPANIES);
+    this.router.navigate(['login']);
   }
 
 }

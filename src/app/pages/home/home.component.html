@@ -40,11 +40,9 @@
     <app-sidebar-menu-itens [menuItems]="items"></app-sidebar-menu-itens>
   </ng-template>
   <ng-template pTemplate="footer">
-      <ul>
-        <li>
-          <a  class="p-ripple"></a>
-        </li>
-      </ul>
+      <div class="logout" (click)="onLogout()">
+        Sair
+      </div>
   </ng-template>
 </p-sidebar>
   
