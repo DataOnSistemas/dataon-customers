@@ -1,11 +1,10 @@
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 import { RouterOutlet } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 
-import { Interceptor } from './config/interceptor/interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from './config/http/http.module';
 
@@ -22,11 +21,6 @@ import { HttpModule } from './config/http/http.module';
     HttpModule
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: Interceptor,
-      multi: true
-    },
     MessageService
   ],
   templateUrl: './app.component.html',
