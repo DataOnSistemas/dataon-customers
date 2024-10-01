@@ -5,7 +5,7 @@ import { TreeModule } from 'primeng/tree';
 import { SidebarMenuItensComponent } from '../../components/sidebar-menu-itens/sidebar-menu-itens.component';
 import { CookiesService } from '../../services/cookies/cookies.service';
 import { EnumCookie } from '../../services/cookies/cookie.enum';
-import { Breakpoints, BreakpointObserver as BObserver, BreakpointObserver } from '@angular/cdk/layout';
+import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
 
 @Component({
@@ -90,7 +90,6 @@ export class HomeComponent implements OnInit {
   }
 
   onSelected(e: any){
-    console.log(e);
     this.cookieService.setObject(EnumCookie.CURRENT_COMPANY,e.value);
   }
 
