@@ -32,10 +32,7 @@ export function authInterceptor(originalRequest: HttpRequest<unknown>, next: Htt
               cookiesService.delete(EnumCookie.AUTHORIZATION);
               router.navigate(['login']);
             }
-            if(!error.ok){
-                cookiesService.delete(EnumCookie.AUTHORIZATION);
-                router.navigate(['login']);
-            }
+
             return throwError(() => error.error);
           })
     );

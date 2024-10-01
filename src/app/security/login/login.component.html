@@ -24,7 +24,7 @@
                 <!-- Recuperar senha -->
               </div>
             </div>
-            <p-button (click)="onLogin()" pRipple  styleClass="p-button-rounded w-full">
+            <p-button (click)="onLogin(0)" pRipple  styleClass="p-button-rounded w-full">
               <div *ngIf="!loading; else elseBlock" class="btn-tx">
                 Entrar
               </div>
@@ -34,6 +34,14 @@
                 </div>
               </ng-template>
             </p-button>
+            <div class="outline">
+              <p-button (click)="onLogin(1)" pRipple [outlined]="true"  styleClass="p-button-rounded w-full">
+                <div class="btn-tx">
+                  Recupere a senha
+                </div>
+              </p-button>
+            </div>
+            
           </div>
         </div>
       </div>

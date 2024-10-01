@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { SharedCommonModule } from '../../shared/shared-common/shared-common.module';
 import { AnimaisService } from '../../services/animais/animais.service';
 import { AccordionModule } from 'primeng/accordion';
-import { CookieService } from 'ngx-cookie-service';
 import { EnumCookie } from '../../services/cookies/cookie.enum';
 import { Router } from '@angular/router';
+import { CookiesService } from '../../services/cookies/cookies.service';
 
 @Component({
   selector: 'app-summary-appointments',
@@ -27,11 +27,11 @@ export class SummaryAppointmentsComponent implements OnInit {
 
   constructor(
     private readonly animaisService: AnimaisService,
-    private readonly coockieService: CookieService,
+    private readonly coockieService: CookiesService,
     private readonly router: Router
   ){}
   ngOnInit(): void {
-    this.userData = JSON.parse(this.coockieService.get(EnumCookie.ALL_DATA));
+    this.userData = this.coockieService.getObject(EnumCookie.CURRENT_COMPANY);
     this.onLoadSummaryAppointments();
   }
 

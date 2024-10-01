@@ -13,6 +13,6 @@ export class LoginService {
   constructor(private readonly http: HttpClient) { }
 
   public login(params: Login) : Observable<any> {
-    return this.http.post<String>(`dataOn/doClientPanel/login?login=${params.email}&pass=${params.password}`, null);
+    return this.http.post<String>(`dataOn/doClientPanel/login?login=${params.email}&pass=${params.password}&IsReset=${params.isReset}`, null);
   }
 }

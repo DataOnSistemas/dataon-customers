@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SharedCommonModule } from '../../shared/shared-common/shared-common.module';
-import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { DynamicQueryService } from '../../services/dynamic-query/dynamic-query.service';
 import { EnumCookie } from '../../services/cookies/cookie.enum';
 import { DynamicQuery } from '../../services/dynamic-query/dynamic-query';
 import { onConvertDate } from '../../shared/util/util'
+import { CookiesService } from '../../services/cookies/cookies.service';
 
 
 
@@ -32,12 +32,12 @@ export class VetTimelineComponent implements OnInit {
 
   constructor(
     private readonly dynamicQuery: DynamicQueryService,
-    private readonly coockieService: CookieService,
+    private readonly coockieService: CookiesService,
     private readonly router: Router
   ){}
 
   ngOnInit(): void {
-    this.userData = JSON.parse(this.coockieService.get(EnumCookie.ALL_DATA));
+    this.userData = this.coockieService.getObject(EnumCookie.CURRENT_COMPANY);
     this.getDynamic();
     this.onLoad();
   }

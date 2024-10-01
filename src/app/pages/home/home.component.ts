@@ -69,6 +69,7 @@ export class HomeComponent implements OnInit {
     });
     this.employees = JSON.parse(this.cookieService.get(EnumCookie.COMPANIES));
     this.selectdEmployee = this.employees[0];
+    this.cookieService.setObject(EnumCookie.CURRENT_COMPANY,this.selectdEmployee);
     this.loginData = JSON.parse(this.cookieService.get(EnumCookie.ALL_DATA));
   }
 
@@ -84,7 +85,13 @@ export class HomeComponent implements OnInit {
     this.cookieService.delete(EnumCookie.ALL_DATA);
     this.cookieService.delete(EnumCookie.AUTHORIZATION);
     this.cookieService.delete(EnumCookie.COMPANIES);
+    this.cookieService.delete(EnumCookie.CURRENT_COMPANY);
     this.router.navigate(['login']);
+  }
+
+  onSelected(e: any){
+    console.log(e);
+    this.cookieService.setObject(EnumCookie.CURRENT_COMPANY,e.value);
   }
 
 }

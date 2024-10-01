@@ -8,5 +8,11 @@ export interface Login {
     * Senha
     */
     password: string;
+    /**
+    * Senha
+    */
+    isReset: number;
+
+
 
 }

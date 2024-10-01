@@ -6,12 +6,14 @@ import { CookiesService } from '../../services/cookies/cookies.service';
 import { EnumCookie } from '../../services/cookies/cookie.enum';
 import { Login } from '../../shared/interfaces/login';
 import { SharedCommonModule } from '../../shared/shared-common/shared-common.module';
+import { ToastService } from '../../services/toast/toast.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   providers: [
-    LoginService
+    LoginService, ToastService
   ],
   imports: [
     SharedCommonModule
@@ -28,7 +30,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private readonly loginService: LoginService, 
-    private readonly router: Router, 
+    private readonly router: Router,
+    private readonly toastService: ToastService,
     private readonly cookiesService: CookiesService,
     private readonly formBuilder: FormBuilder){
       
@@ -45,18 +48,27 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public onLogin(){
-    this.loading = true;
+  public onLogin(isReset: number){
+    
     if (this.loginForm?.valid) {
+      this.loading = true;
       const loginData: Login = this.loginForm.value;
+      loginData.isReset = isReset;
 
       this.loginService.login(loginData).subscribe(
         {
           next: (response) => {
-            this.cookiesService.set(EnumCookie.AUTHORIZATION, response.info.AccessToken);
-            this.cookiesService.set(EnumCookie.COMPANIES, JSON.stringify(response.info.MultiEmpresa));
-            this.cookiesService.set(EnumCookie.ALL_DATA, JSON.stringify(response.info));
-            this.router.navigate(['/home'])
+            if(response.RetWm === 'success'){
+              this.cookiesService.set(EnumCookie.AUTHORIZATION, response.info.AccessToken);
+              this.cookiesService.set(EnumCookie.COMPANIES, JSON.stringify(response.info.MultiEmpresa));
+              this.cookiesService.set(EnumCookie.ALL_DATA, JSON.stringify(response.info));
+              this.router.navigate(['/home']);
+            } else if(response.RetWm === 'reset'){
+              this.toastService.error({summary: 'Login', detail: 'Foi enviado a nova senha ao email ou telefone adicionado ao campo login'});
+            } else {
+              this.toastService.error({summary: 'Login', detail: response.info});
+            }
+            
             this.loading = false;
           },
           error: (err) => {
@@ -65,6 +77,8 @@ export class LoginComponent implements OnInit {
         }
       ); 
 
+    } else {
+      this.toastService.warn({summary: 'Login', detail: 'Existem campos inválidos'});
     }
   }
 
