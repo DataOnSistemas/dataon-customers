@@ -1,27 +1,49 @@
 <div class="timeline-container">
-    <div [ngClass]="onGetColorComponent(item['TID'], 1)" *ngFor="let item of timelineItems">
-        <div class="timeline-data">
-            {{ onConvertDate(item['DATA']) }}
+    <div class="header">
+        <div (click)="onFilter()">
+            Filtro
         </div>
-        <div class="timeline-logo">
-            <div class="icon">
-                <i [ngClass]="onGetColorComponent(item['TID'], 2)" ></i>
+    </div>
+    <div class="timeline">
+        <div [ngClass]="onGetColorComponent(item['TID'], 1)" *ngFor="let item of timelineItems">
+            <div class="timeline-data">
+                <div class="detail"></div>
+                {{ onConvertDate(item['DATA']) }}
             </div>
-        </div>
-        <div class="timeline-content">
-            <div class="head">
-               {{ item["DESCRIÇÃO"] }}
-            </div>
-            <div class="footer">
-                <div>
-                    <i class="icons do do-timeline"></i>
-                    <i class="icons do do-timeline"></i>
+            <div class="timeline-logo">
+                <div class="icon">
+                    <i [ngClass]="onGetColorComponent(item['TID'], 2)" ></i>
                 </div>
-                <div>
-                    {{ item['FATURADO'] }}
+            </div>
+            <div class="timeline-content">
+                <div class="head">
+                   {{ item["DESCRIÇÃO"] }}
+                </div>
+                <div class="footer">
+                    <div>
+                        <i class="icons do do-timeline"></i>
+                        <i class="icons do do-timeline"></i>
+                    </div>
+                    <div>
+                        {{ item['FATURADO'] }}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="side-index">
+    <p-sidebar  [showCloseIcon]="false" [(visible)]="sidebarVisible" position="right">
+        <ng-template pTemplate="header">
+          Filtros
+        </ng-template>
+        <ng-template pTemplate="body">
+    
+        </ng-template>
+        <ng-template pTemplate="footer">
+    
+        </ng-template>
+      </p-sidebar>
+</div>
+
 

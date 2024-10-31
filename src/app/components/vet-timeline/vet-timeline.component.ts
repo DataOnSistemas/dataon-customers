@@ -23,10 +23,10 @@ import { CookiesService } from '../../services/cookies/cookies.service';
 })
 export class VetTimelineComponent implements OnInit {
 
-
   public timelineItems: any[] = [];
   private userData: any;
   private dynamicParams: DynamicQuery = new DynamicQuery();
+  public sidebarVisible: boolean = false;
 
   @Input() idAnimal: any;
 
@@ -55,6 +55,11 @@ export class VetTimelineComponent implements OnInit {
       }
     })
   }
+
+  onFilter() {
+    this.sidebarVisible = !this.sidebarVisible ? true : false;
+  }
+    
 
   getDynamic(){
     this.dynamicParams.doID = this.userData.IDAtmus999;

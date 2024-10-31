@@ -1,31 +1,40 @@
 .timeline-container{
     position: relative;
-    margin: 20px 0;
-    padding-left: 50px;
+}
+
+.header{
+    height: 60px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
 }
 
 .timeline-item{
     height: 90px;
     display: flex;
     margin-bottom: 10px;
-    margin-left: 10px;
     border-radius: 10px;
 }
 
 .timeline-data{
-    position: absolute;
-    left: -7px;
     background-color: white;
-    margin-top: 13px;
-    font-size: 8px;
+    font-size: 10px;
+    font-weight: bold;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     max-width: 60px;
-    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    .detail{
+        background-color: transparent;
+        height: 90px;
+        width: 1px;
+        position: absolute;
+
+    }
 }
-
-
 
 .timeline-logo{
     width: 15%;
@@ -40,6 +49,11 @@
         align-items: center;
         justify-content: center;
     }
+}
+.side-index{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
 }
 .timeline-content{
     width: 85%;
@@ -61,28 +75,6 @@
         }
     }
 }
-
-.timeline-container::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #ccc;
-  }
-.timeline-item::before {
-    content: '';
-    margin-bottom: 15px;
-    position: absolute;
-    left: 17px;
-    width: 8px;
-    height: 8px;
-    background-color: #ccc;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px white;
-}
-
 
 .consulta{
     background-color: #FDC19A;
