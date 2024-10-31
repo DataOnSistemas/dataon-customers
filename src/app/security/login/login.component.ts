@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login/login.service';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { CookiesService } from '../../services/cookies/cookies.service';
 import { EnumCookie } from '../../services/cookies/cookie.enum';
 import { Login } from '../../shared/interfaces/login';
 import { SharedCommonModule } from '../../shared/shared-common/shared-common.module';
 import { ToastService } from '../../services/toast/toast.service';
-import { MessageService } from 'primeng/api';
+import { DoLoadingComponent } from '../../components/do-loading/do-loading.component';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,8 @@ import { MessageService } from 'primeng/api';
     LoginService, ToastService
   ],
   imports: [
-    SharedCommonModule
+    SharedCommonModule,
+    DoLoadingComponent
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
