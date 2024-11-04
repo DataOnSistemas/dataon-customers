@@ -4,9 +4,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-/*     background: #FF8008;
-    background: -webkit-linear-gradient(to top, #FFC837, #FF8008);
-    background: linear-gradient(to top, #FFC837, #FF8008); */
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -95,10 +92,6 @@
     }
     .welcome{
       display: none;
-    }
-    .login{
-      border-radius: 150px 0 150px 0px;
-      background-color: #FFC837;
     }
   }
   input{
