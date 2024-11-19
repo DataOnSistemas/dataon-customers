@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SharedCommonModule } from '../../shared/shared-common/shared-common.module';
 import { Router } from '@angular/router';
-import { DynamicQueryService } from '../../services/dynamic-query/dynamic-query.service';
-import { EnumCookie } from '../../services/cookies/cookie.enum';
-import { DynamicQuery } from '../../services/dynamic-query/dynamic-query';
+import { DynamicQueryService } from '../../shared/services/dynamic-query/dynamic-query.service';
+import { EnumCookie } from '../../shared/services/cookies/cookie.enum';
+import { DynamicQuery } from '../../shared/services/dynamic-query/dynamic-query';
 import { onConvertDate } from '../../shared/util/util'
-import { CookiesService } from '../../services/cookies/cookies.service';
+import { CookiesService } from '../../shared/services/cookies/cookies.service';
 
 
 
@@ -59,7 +59,7 @@ export class VetTimelineComponent implements OnInit {
   onFilter() {
     this.sidebarVisible = !this.sidebarVisible ? true : false;
   }
-    
+
 
   getDynamic(){
     this.dynamicParams.doID = this.userData.IDAtmus999;
@@ -98,11 +98,11 @@ export class VetTimelineComponent implements OnInit {
         return "timeline orcamento";
       default:
         return "timeline"
-    } 
+    }
   }
 
   onConvertDate(date: any) {
     return onConvertDate(date);
   }
-  
+
 }

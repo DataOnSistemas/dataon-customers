@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login/login.service';
 import { Router } from '@angular/router';
-import { CookiesService } from '../../services/cookies/cookies.service';
-import { EnumCookie } from '../../services/cookies/cookie.enum';
+import { CookiesService } from '../../shared/services/cookies/cookies.service';
+import { EnumCookie } from '../../shared/services/cookies/cookie.enum';
 import { Login } from '../../shared/interfaces/login';
 import { SharedCommonModule } from '../../shared/shared-common/shared-common.module';
-import { ToastService } from '../../services/toast/toast.service';
+import { ToastService } from '../../shared/services/toast/toast.service';
 import { DoLoadingComponent } from '../../components/do-loading/do-loading.component';
 
 @Component({
@@ -23,19 +23,19 @@ import { DoLoadingComponent } from '../../components/do-loading/do-loading.compo
   styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit {
-  
+
   public loginForm!: FormGroup;
   public loading: Boolean = false;
 
 
 
   constructor(
-    private readonly loginService: LoginService, 
+    private readonly loginService: LoginService,
     private readonly router: Router,
     private readonly toastService: ToastService,
     private readonly cookiesService: CookiesService,
     private readonly formBuilder: FormBuilder){
-      
+
     }
 
   ngOnInit(): void {
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
   }
 
   public onLogin(isReset: number){
-    
+
     if (this.loginForm?.valid) {
       this.loading = true;
       const loginData: Login = this.loginForm.value;
@@ -69,14 +69,14 @@ export class LoginComponent implements OnInit {
             } else {
               this.toastService.error({summary: 'Login', detail: response.info});
             }
-            
+
             this.loading = false;
           },
           error: (err) => {
             this.loading = false;
           }
         }
-      ); 
+      );
 
     } else {
       this.toastService.warn({summary: 'Login', detail: 'Existem campos inválidos'});

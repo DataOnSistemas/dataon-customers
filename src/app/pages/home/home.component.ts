@@ -3,8 +3,8 @@ import { Router, RouterOutlet } from '@angular/router';
 import { SharedCommonModule } from '../../shared/shared-common/shared-common.module';
 import { TreeModule } from 'primeng/tree';
 import { SidebarMenuItensComponent } from '../../components/sidebar-menu-itens/sidebar-menu-itens.component';
-import { CookiesService } from '../../services/cookies/cookies.service';
-import { EnumCookie } from '../../services/cookies/cookie.enum';
+import { CookiesService } from '../../shared/services/cookies/cookies.service';
+import { EnumCookie } from '../../shared/services/cookies/cookie.enum';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
 
@@ -12,8 +12,8 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   selector: 'app-home',
   standalone: true,
   imports: [
-    RouterOutlet, 
-    SharedCommonModule, 
+    RouterOutlet,
+    SharedCommonModule,
     TreeModule,
     SidebarMenuItensComponent
   ],
@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
     },
   ];
 
-  
+
   constructor(
     private readonly router: Router,
     private readonly cookieService: CookiesService,

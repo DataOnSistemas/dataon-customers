@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { SharedCommonModule } from '../../shared/shared-common/shared-common.module';
 import { AnimaisService } from '../../services/animais/animais.service';
 import { AccordionModule } from 'primeng/accordion';
-import { EnumCookie } from '../../services/cookies/cookie.enum';
+import { EnumCookie } from '../../shared/services/cookies/cookie.enum';
 import { Router } from '@angular/router';
-import { CookiesService } from '../../services/cookies/cookies.service';
+import { CookiesService } from '../../shared/services/cookies/cookies.service';
 
 @Component({
   selector: 'app-summary-appointments',
@@ -53,5 +53,5 @@ export class SummaryAppointmentsComponent implements OnInit {
     this.router.navigate(['home','timeline',id]);
   }
 
-  
+
 }

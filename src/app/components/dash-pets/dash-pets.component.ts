@@ -1,8 +1,8 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AnimaisService } from '../../services/animais/animais.service';
-import { EnumCookie } from '../../services/cookies/cookie.enum';
+import { EnumCookie } from '../../shared/services/cookies/cookie.enum';
 import { SharedCommonModule } from '../../shared/shared-common/shared-common.module';
-import { CookiesService } from '../../services/cookies/cookies.service';
+import { CookiesService } from '../../shared/services/cookies/cookies.service';
 
 @Component({
   selector: 'app-dash-pets',
